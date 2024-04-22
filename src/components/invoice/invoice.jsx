@@ -3,6 +3,7 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 
 const Invoice = () => {
+  const [btn, setBtn] = useState('Save Invoice')
   const [invoiceData, setInvoiceData] = useState({
     invoiceNumber: '',
     invoiceDate: '',
@@ -68,6 +69,7 @@ const Invoice = () => {
   const generatePDF = async (e) => {
     e.preventDefault()
       try {
+        setBtn('loading...')
         const html = htmlTemplate.toString();
         const response = await axios.post('https://html-to-pdf-api-zeta.vercel.app/conversion', {html: html}, { responseType: 'arraybuffer' });
         console.log(response.data)
@@ -76,6 +78,7 @@ const Invoice = () => {
   
         // Use file-saver to trigger the download
         saveAs(pdfBlob, 'invoice.pdf');
+        setBtn('Save Invoice')
       } catch (error) {
         console.error('Error generating PDF:', error);
       }
@@ -214,7 +217,7 @@ const Invoice = () => {
                 </label><br/>
             </div>
             
-            <button onClick={generatePDF} className='btn btn-primary'>Save Invoice</button><br/>
+            <button onClick={generatePDF} className='btn btn-primary'>{btn}</button><br/>
         </form>
         </div>
     </div>
