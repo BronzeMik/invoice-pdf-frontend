@@ -1,0 +1,112 @@
+
+
+.invoice-section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.invoice-container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0px 30px;
+}
+
+.invoice-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.invoice-logo {
+  max-width: 200px;
+}
+
+.invoice-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.invoice-info label {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice-info input,
+.invoice-info textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.invoice-items {
+  margin-bottom: 20px;
+}
+
+.invoice-items input[type="text"],
+.invoice-items input[type="number"] {
+  width: calc(33.33% - 10px);
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.invoice-items button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.invoice-items button:hover {
+  background-color: #0056b3;
+}
+
+.invoice-items button[type="button"] {
+  background-color: #dc3545;
+}
+
+.invoice-items button[type="button"]:hover {
+  background-color: #bd2130;
+}
+
+.invoice-items > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.invoice-items > div:last-child {
+  margin-bottom: 0;
+}
+
+.invoice-footer {
+  margin-top: 20px;
+}
+
+.invoice-footer button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.invoice-footer button:hover {
+  background-color: #218838;
+}
